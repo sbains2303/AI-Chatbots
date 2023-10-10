@@ -29,32 +29,32 @@ This project is licensed under the [License Name] - see the LICENSE file for det
 
 ## Acknowledgments
 
-Mention any external libraries, frameworks, or tools used in the project.
+Mention any external libraries, frameworks, or tools used in the project.   
 Credit any sources of inspiration or references that contributed to the project.
 
 ## Initial Stakeholders
 
-1- Web developers
-2- Webapp service providers
-3- Users of websites
-4- Our client
-5-Legislators
-6-General public
-7-OpenAI
+1. Web developers
+2. Webapp service providers
+3. Users of websites
+4. Our client
+5. Legislators
+6. General public
+7. OpenAI
 
 ## User Stories
 
-As a <web developer>, I want to <integrate the chatbot> so that <the users of my website can quickly access information relating to the website’s content/helpful information>.
-As a <webapp service provider>, I want to <have the ability to replicate the chatbot> so that < I can offer it as a service>.
-As a <website user>, I want to <ask questions> so that <I can better understand the website’s content / easily navigate the website>.
-As a <client>, I want to <some goal> so that <some reason>.
+As a web developer, I want to integrate the chatbot so that the users of my website can quickly access information relating to the website’s content/helpful information.   
+As a webapp service provider, I want to have the ability to replicate the chatbot so that I can offer it as a service.   
+As a website user, I want to ask questions so that I can better understand the website’s content/easily navigate the website.  
+As a client, I want to "some goal" so that "some reason".  
 
 ## Flow Steps:
 
-1- Open the website
-2- Read some of the website's content
-3- Think of questions relating to that content
-4- Think if they want to upload additional files or not
-5- Query the chatbot
-6- Read the chatbot’s response
+1. Open the website
+2. Read some of the website's content
+3. Think of questions relating to that content
+4. Think if they want to upload additional files or not
+5. Query the chatbot
+6. Read the chatbot’s response
 
