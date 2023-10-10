@@ -1,4 +1,4 @@
-# ChatGPT-Powered Chatbot Integration for WordPress
+# ChatGPT enhanced webpage chatbots
 
 ## Project Overview
 
