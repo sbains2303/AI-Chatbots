@@ -58,3 +58,8 @@ As a client, I want to "some goal" so that "some reason".
 5. Query the chatbot
 6. Read the chatbot’s response
 
+## Project Management:
+[Kanban Board](https://github.com/orgs/spe-uob/projects/86)
+
+[Gantt Chart](https://github.com/spe-uob/2023-Chatbots/blob/main/Gantt%20chart.xlsx)
+
