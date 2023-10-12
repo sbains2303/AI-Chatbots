@@ -45,10 +45,15 @@ Credit any sources of inspiration or references that contributed to the project.
 ## User Stories
 
 As a web developer, I want to integrate the chatbot so that the users of my website can quickly access information relating to the website’s content/helpful information.   
+
 As a webapp service provider, I want to have the ability to replicate the chatbot so that I can offer it as a service.   
+
 As a website user, I want to ask questions so that I can better understand the website’s content/easily navigate the website.  
+
 As a website user, I want to ask questions so that I can get filtered answers which is accuracy and helpful.
+
 As a website user, I want to upload my own files so that I can get the information which I want from the files to save time.
+
 As a client, I want to "some goal" so that "some reason".  
 
 ## Flow Steps:
