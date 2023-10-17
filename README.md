@@ -8,7 +8,8 @@ This readme file give the overview of chatGPT enhanced webpage chatbots, that in
 * [Acknowledgments](#Acknowledgments)  
 * [Initial Stakeholders](#Initial-Stakeholders)  
 * [User Stories](#User-Stories)    
-* [Flow Steps](#Flow-Steps)  
+* [Flow Steps](#Flow-Steps)
+* [Team member](#Team-member)
 * [Project Management](#Project-Management)
 ## Project Overview
 
@@ -74,6 +75,17 @@ As a client, I want to "some goal" so that "some reason".
 4. Think if they want to upload additional files or not
 5. Query the chatbot
 6. Read the chatbot’s response
+
+## Team member:
+
+| Members          | Email                                                 |
+| ---------------- | ----------------------------------------------------- |
+|Emir Abou Zaki    | [jk22756@bristol.ac.uk](mailto:jk22756@bristol.ac.uk) |
+|Lifan Lei         | [kg21776@bristol.ac.uk](mailto:kg21776@bristol.ac.uk) |
+|Seb Whipps        | [nk22674@bristol.ac.uk](mailto:nk22674@bristol.ac.uk) |  
+|Saihajpreet Bains | [ia22870@bristol.ac.uk](mailto:ia22870@bristol.ac.uk) |    
+|Hankang Wu        | [fq22652@bristol.ac.uk](mailto:fq22652@bristol.ac.uk) |  
+
 
 ## Project Management:
 [Kanban Board](https://github.com/orgs/spe-uob/projects/86)
