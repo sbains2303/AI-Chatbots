@@ -1,5 +1,8 @@
-# ChatGPT enhanced webpage chatbots
-
+# ChatGPT enhanced webpage chatbots  
+This readme file give the overview of chatGPT enhanced webpage chatbots, that include fatures, goals, stkeholders and user stories.
+[Project Overview](##Project-Overview)  
+[Features](##Features)  
+[Project Goals](##Project-Goals)
 ## Project Overview
 
 The objective of this project is to develop and integrate an advanced chatbot powered by ChatGPT into WordPress-based webpages. This chatbot aims to enhance user engagement, provide quick and accurate information, and create a seamless interactive experience on the website. Additionally, it should be designed to be easily replicable across various websites.
