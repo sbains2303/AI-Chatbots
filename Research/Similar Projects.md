@@ -11,5 +11,7 @@ https://www.freecodecamp.org/news/how-to-create-a-chatbot-with-the-chatgpt-api/
 
 - Uses node.js to make an application
 
+### Using Flask-RESTful in python to create an API
+https://rapidapi.com/blog/how-to-build-an-api-in-python/
 
-
+- Could work nicely alongside LangChain
