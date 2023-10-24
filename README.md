@@ -27,7 +27,7 @@ For detailed documentation and usage instructions, refer to the Wiki.
 
 This project is licensed under the [License Name] - see the LICENSE file for details.
 
-## Acknowledgments
+## Acknowledgements
 
 Mention any external libraries, frameworks, or tools used in the project.   
 Credit any sources of inspiration or references that contributed to the project.
@@ -56,7 +56,7 @@ As a website user, I want to upload my own files so that I can get the informati
 
 As a client, I want to "some goal" so that "some reason".  
 
-## Flow Steps:
+## Flow Steps
 
 1. Open the website
 2. Read some of the website's content
@@ -65,7 +65,7 @@ As a client, I want to "some goal" so that "some reason".
 5. Query the chatbot
 6. Read the chatbot’s response
 
-## Team member:
+## Team member
 
 | Members          | Email                                                 |
 | ---------------- | ----------------------------------------------------- |
@@ -76,7 +76,7 @@ As a client, I want to "some goal" so that "some reason".
 |Hankang Wu        | [fq22652@bristol.ac.uk](mailto:fq22652@bristol.ac.uk) |  
 
 
-## Project Management:
+## Project Management
 [Kanban Board](https://github.com/orgs/spe-uob/projects/86)
 
 [Gantt Chart](https://github.com/orgs/spe-uob/projects/86/views/3)
