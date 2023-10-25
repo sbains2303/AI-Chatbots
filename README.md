@@ -25,7 +25,7 @@ For detailed documentation and usage instructions, refer to the Wiki.
 
 ## License
 
-This project is licensed under the [License Name] - see the LICENSE file for details.
+This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uob/2023-Chatbots/blob/main/LICENSE) file for details.
 
 ## Acknowledgements
 
