@@ -44,17 +44,22 @@ Credit any sources of inspiration or references that contributed to the project.
 
 ## User Stories
 
-As a web developer, I want to integrate the chatbot so that the users of my website can quickly access information relating to the website’s content/helpful information.   
+As a web developer, I want to integrate the chatbot so that the users of my website can quickly access information relating to the website’s content/helpful information. This allows users can find answers to their questions without navigating through the site extensively.
 
-As a webapp service provider, I want to have the ability to replicate the chatbot so that I can offer it as a service.   
+As a webapp service provider, I want to have the ability to replicate the chatbot so that I can offer it as a service. This will allow me to provide chatbot functionality to multiple clients and generate a new revenue stream.
 
-As a website user, I want to ask questions so that I can better understand the website’s content/easily navigate the website.  
+As a website user, I want to ask questions so that I can better understand the website’s content/easily navigate the website. So that I can quickly grasp the main features and purpose of the website without searching through pages.
 
-As a website user, I want to ask questions so that I can get filtered answers which is accuracy and helpful.
+As a website user, I want to ask questions so that I can get filtered answers which is accuracy and helpful. This ensures that I receive precise and relevant information that enhances my experience.
 
-As a website user, I want to upload my own files so that I can get the information which I want from the files to save time.
+As a website user, I want to upload my own files so that I can get the information which I want from the files to save time. This feature allows me to extract specific data or insights from files without manual searching.
 
-As a client, I want to "some goal" so that "some reason".  
+As a content creator, I want the chatbot to assist me in generating ideas and content topics so that I can improve my productivity and creativity. This will help me brainstorm fresh and engaging content ideas, which is essential for maintaining a captivating online presence and retaining an audience.
+
+As a website administrator, I want the chatbot to monitor user interactions and provide feedback so that I can continuously enhance the user experience. By analyzing user interactions and feedback, I can identify areas of improvement, fix issues promptly, and ensure a more user-friendly and satisfying website.
+
+As a sales representative, I want the chatbot to provide product recommendations based on user preferences so that I can increase sales and customer satisfaction. By leveraging user preferences and the chatbot's capabilities, I can offer tailored product suggestions that enhance the shopping experience, boost sales, and satisfy customers.
+
 
 ## Flow Steps
 
