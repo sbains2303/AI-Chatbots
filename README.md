@@ -2,22 +2,26 @@
 
 ## Project Overview
 
-The objective of this project is to develop and integrate an advanced chatbot powered by ChatGPT into WordPress-based webpages. This chatbot aims to enhance user engagement, provide quick and accurate information, and create a seamless interactive experience on the website. Additionally, it should be designed to be easily replicable across various websites.
+The primary focus of this project is the development of an API-integrated chatbot, offering versatile capabilities that can be seamlessly integrated into any website. The chatbot serves as the main project component, designed to handle various user queries, including those related to recipes. Additionally, the Recipes website serves as a showcase, highlighting the chatbot's functionalities and its potential integration into different platforms.
 
 ## Features
 
-- Integration of ChatGPT-powered chatbot into WordPress websites.
-- Utilization of webpage content and external input documents (e.g., PDFs) for contextually relevant responses.
-- User input aggregation and database support for content and design improvement.
+- Recipe Repository: Collection of diverse and popular dish recipes
+- Chatbot Interaction: Users can query the chatbot for recipes, ingredient alternatives, and upload their own recipe documents (PDF, docx, xlsx, txt etc)
+- Meal Plans & Shopping Lists: Facility to create and manage meal plans and shopping lists
+- Digital Receipts: Users can save and manage digital receipts
+- Content Summarization: Ability to summarize lengthy recipes
+- Versatile Querying: Supports varied user queries about recipes and ingredients
+- Chatbot Integration Use Case: Serves as an exemplary use case for the chatbot technology and offfers flexible integration for websites to enable various user interactions and queries
 
 ## Project Goals
 
-1. Develop a robust chatbot that can accurately respond to user queries.
-2. Integrate the chatbot seamlessly into WordPress-based webpages.
-3. Enable the chatbot to use both webpage data and external input documents for responses.
-4. Create a database to aggregate user inputs and assist in content and design improvements.
-5. Enhance user engagement and provide a user-friendly interactive experience.
-6. Ensure the chatbot solution is easily replicable for use on various websites.
+- Enable easy access to and creation of recipe content
+- Allow users to upload various document types for recipes, meal plans, etc
+- Develop a user-friendly interface for recipe browsing and interaction
+- Seamlessly integrate a chatbot for recipe-related queries
+- Develop a versatile and easily integrable chatbot API for websites
+- Highlight the chatbot's adaptability for diverse user queries and website integration
 
 ## Documentation
 
@@ -29,8 +33,15 @@ This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uo
 
 ## Acknowledgements
 
-Mention any external libraries, frameworks, or tools used in the project.   
-Credit any sources of inspiration or references that contributed to the project.
+**Front End**: Utilizes HTML, CSS, and JavaScript for website development
+
+**Back End**: Powered by Python with Flask, facilitating web development, Jinja2 template integration, and interaction with SQL databases
+
+**AWS Server**: Cost-effective and flexible server hosting solution
+
+**ChatGPT API Integration**: Each website has its unique ChatGPT API key to avoid issues with running costs and provide distinct models for each site
+
+**SQL Database (MariaDB)**: Familiar and scalable database solution, implemented through Amazon RDS, simplifying database management tasks
 
 ## Initial Stakeholders
 
@@ -63,12 +74,11 @@ As a sales representative, I want the chatbot to provide product recommendations
 
 ## Flow Steps
 
-1. Open the website
-2. Read some of the website's content
-3. Think of questions relating to that content
-4. Think if they want to upload additional files or not
-5. Query the chatbot
-6. Read the chatbot’s response
+1.  Input Acceptance: Receive input string, identifying the calling website to select the appropriate model and processing
+2.  Pre-processing: Includes discarding irrelevant queries, document parsing, and database checks
+3.  ChatGPT Processing: Utilizes LangChain to communicate with ChatGPT for text processing (skipped if input is rejected)
+4.  Post-processing: Involves updating the database with the obtained information
+5.  Output Delivery: Return processed string to the API caller (the respective website)
 
 ## Team member
 
