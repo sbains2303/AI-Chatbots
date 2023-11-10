@@ -1,0 +1,18 @@
+:root {
+    --bs-body-font-family: 'Rubik', sans-serif;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+/* If you want to specify the font for specific elements within the navbar */
+.navbar .navbar-brand {
+    font-family: var(--bs-body-font-family);
+    font-size: 2rem;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-family: var(--bs-body-font-family);
+    font-size: 2rem;
+}
