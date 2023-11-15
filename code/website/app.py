@@ -17,3 +17,4 @@ def scrambledEggs():
 @app.route('/salmon-fishcakes')
 def salmonFishcakes():
     return render_template("salmon-fishcakes.html")
+
