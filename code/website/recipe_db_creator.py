@@ -11,7 +11,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Recipes (
     recipe_id INTEGER NOT NULL UNIQUE PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT,
-    cuisine_id TEXT,
+    cuisine_id INTEGER,
     serves TEXT,
     image BLOB,
     cooking_time INTEGER,
@@ -26,7 +26,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS  Ingredients (
     recipe_id INTEGER NOT NULL,
     name TEXT NOT NULL,
     quantity TEXT,
-    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id),
+    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id)
 );
 ''')
 
@@ -35,8 +35,9 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Steps (
     recipe_id INTEGER NOT NULL,
     description TEXT NOT NULL,
     order INTEGER NOT NULL,
-    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id),
-);''')
+    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id)
+);
+''')
 
 
 cur.execute('''CREATE TABLE IF NOT EXISTS Authors (
@@ -45,11 +46,11 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Authors (
     email TEXT,
     bio TEXT
 );
-'''),
+''')
 
 cur.execute('''CREATE TABLE IF NOT EXISTS Cuisines (
     cuisine_id INTEGER NOT NULL UNIQUE PRIMARY KEY,
-    cuisine_name TEXT,
+    cuisine_name TEXT
 );
 ''')
 
