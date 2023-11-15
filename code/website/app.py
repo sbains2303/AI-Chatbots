@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, db
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.config['DATABASE'] = 'cookbook.db'
 
 @app.route('/')
@@ -11,8 +11,14 @@ def index():
 @app.route('/chicken-korma')
 def chickenKorma():
     return render_template("chicken-korma.html")
-#emir
+  
+@app.route('/scrambled-eggs')
+def scrambledEggs():
+    return render_template("scrambled-eggs.html")
 
+@app.route('/salmon-fishcakes')
+def salmonFishcakes():
+    return render_template("salmon-fishcakes.html")
 
 @app.route('/publish', methods=['POST'])
 def publish():
@@ -59,4 +65,3 @@ def publish():
         i+=1
 
     return 'Recipe inserted successfully'
-
