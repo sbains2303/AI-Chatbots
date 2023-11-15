@@ -47,6 +47,14 @@ This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uo
 
 ## Setup and Deployment
 
+**Prerequisites** Clone our github repository: https://github.com/spe-uob/2023-Chatbots.git
+
+**Downloads**: 
+- Python https://www.python.org/downloads/release/python-3120/
+- Flask: via command lines in terminal, pip install flask
+- SQL: pip install mysql-connector-python
+- OpenAI
+
 ## Acknowledgements
 
 **Front End**: Utilizes HTML, CSS, and JavaScript for website development
