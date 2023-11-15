@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a96b8405-41d7-4620-94c5-bac18d277945" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/website/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/website/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/website/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/website/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/website/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/code/website/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/website/templates/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/code/website/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,14 +31,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\saiha\2023-Chatbots\code\website\templates" />
+      <recent name="C:\Users\saiha\2023-Chatbots\code\website" />
+      <recent name="C:\Users\saiha\2023-Chatbots\code\website\static\css" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a96b8405-41d7-4620-94c5-bac18d277945" name="Changes" comment="" />
+      <created>1699969498933</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699969498933</updated>
+    </task>
     <servers />
   </component>
 </project>

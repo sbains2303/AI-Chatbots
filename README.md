@@ -1,5 +1,19 @@
 # ChatGPT enhanced webpage chatbots  
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Project Goals](#project-goals)
+- [Documentation](#documentation)
+- [License](#license)
+- [Setup and Deployment](#setup-and-deployment)
+- [Acknowledgements](#acknowledgements)
+- [Initial Stakeholders](#initial-stakeholders)
+- [User Stories](#user-stories)
+- [Flow Steps](#flow-steps)
+- [Team Members](#team-members)
+- [Project Management](#project-management)
+
 ## Project Overview
 
 The primary focus of this project is the development of an API-integrated chatbot, offering versatile capabilities that can be seamlessly integrated into any website. The chatbot serves as the main project component, designed to handle various user queries, including those related to recipes. Additionally, the Recipes website serves as a showcase, highlighting the chatbot's functionalities and its potential integration into different platforms.
@@ -30,6 +44,16 @@ For detailed documentation and usage instructions, refer to the Wiki.
 ## License
 
 This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uob/2023-Chatbots/blob/main/LICENSE) file for details.
+
+## Setup and Deployment
+
+**Prerequisites** Clone our github repository: https://github.com/spe-uob/2023-Chatbots.git
+
+**Downloads**: 
+- Python https://www.python.org/downloads/release/python-3120/
+- Flask: via command lines in terminal, pip install flask
+- SQL: pip install mysql-connector-python
+- OpenAI
 
 ## Acknowledgements
 
@@ -80,7 +104,7 @@ As a sales representative, I want the chatbot to provide product recommendations
 4.  Post-processing: Involves updating the database with the obtained information
 5.  Output Delivery: Return processed string to the API caller (the respective website)
 
-## Team member
+## Team members
 
 | Members          | Email                                                 |
 | ---------------- | ----------------------------------------------------- |
