@@ -34,7 +34,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Steps (
     step_id INTEGER PRIMARY KEY,
     recipe_id INTEGER NOT NULL,
     description TEXT NOT NULL,
-    order INTEGER NOT NULL,
+    order_number INTEGER NOT NULL,
     FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id)
 );
 ''')
