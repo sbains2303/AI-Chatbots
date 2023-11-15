@@ -11,21 +11,22 @@ cur.execute('''CREATE TABLE Recipes (
     recipe_id INTEGER NOT NULL UNIQUE AUTOINCREMENT PRIMARY KEY
     name TEXT NOT NULL,
     description TEXT,
-    cuisine TEXT,
+    cuisine_id TEXT,
     serves TEXT,
     image VARBINARY (MAX);
     cooking_time INTEGER,
     author_id INTEGER,
-    ADD FOREIGN KEY (author_id) REFERENCES Authors (author_id);
-)''')
+    ADD FOREIGN KEY (author_id) REFERENCES Authors (author_id),
+    ADD FOREIGN KEY (cuisine_id) REFERENCES Cuisines (cuisine_id),
+);''')
 
 cur.execute('''CREATE TABLE Ingredients (
     ingredient_id INTEGER UNIQUE NOT NULL AUTOINCREMENT PRIMARY KEY,
     recipe_id INTEGER NOT NULL,
     name TEXT NOT NULL,
     quantity TEXT,
-    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id)
-)
+    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id),
+);
 ''')
 
 cur.execute('''CREATE TABLE Steps (
@@ -33,7 +34,7 @@ cur.execute('''CREATE TABLE Steps (
     recipe_id INTEGER NOT NULL,
     description TEXT NOT NULL,
     order INTEGER NOT NULL,
-    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id)
+    FOREIGN KEY (recipe_id) REFERENCES Recipes (recipe_id),
 );''')
 
 
@@ -43,9 +44,13 @@ cur.execute('''CREATE TABLE Authors (
     email TEXT,
     bio TEXT
 );
+'''),
+
+cur.execute('''CREATE TABLE Cuisines (
+    cuisine_id INTEGER NOT NULL UNIQUE PRIMARY KEY,
+    cuisine_name TEXT,
+);
 ''')
-
-
 
 # Commit the changes to the database
 conn.commit()
