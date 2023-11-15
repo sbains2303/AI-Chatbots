@@ -9,3 +9,4 @@ def index():
 @app.route('/chicken-korma')
 def chickenKorma():
     return render_template("chicken-korma.html")
+#emir
