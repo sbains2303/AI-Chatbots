@@ -8,6 +8,12 @@ app.config['DATABASE'] = 'cookbook.db'
 def index():
     return render_template("index.html")
 
+@app.route('/recipe/<recipe_name>')
+def serveRecipe(recipe_name):
+    
+    return render_Template("build_recipe.html")
+
+
 @app.route('/chicken-korma')
 def chickenKorma():
     return render_template("chicken-korma.html")
