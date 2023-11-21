@@ -1,23 +1,69 @@
-from flask import Flask, render_template, request, g
-# import sqlite3
-
-import sqlalchemy
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_url_path='/static')
-db = sqlalchemy(app)
+
 
 app.config['DATABASE'] = 'cookbook.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cookbook.db'
-
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
+
 @app.route('/recipe/<recipe_name>')
-def serveRecipe(recipe_name):
+def serveRecipe(recipe_id):
     
-    return render_template("build_recipe.html")
+    # Query the database to get the recipe details
+    recipe = db.Recipe.query.filter_by(recipe_id=recipe_id).first()
+
+    recipe_name = recipe.name
+
+    # Get related data (e.g., ingredients and steps)
+    ingredients = recipe.ingredients
+    steps = recipe.steps
+    author_name = recipe.author.name
+    email = recipe.author.email
+    serves = recipe.serves
+    image = recipe.image  # Assuming image is stored as binary data
+    time = recipe.cooking_time
+    cuisine_name = recipe.cuisine.cuisine_name
+
+    return render_template("build_recipe.html", 
+                           author_name=author_name,
+                           email=email,
+                           recipe_name=recipe_name,
+                           recipe_desc=recipe.description,
+                           serves=serves,
+                           image=image,
+                           time=time,
+                           ingredients=ingredients,
+                           steps=steps,
+                           cuisine_name=cuisine_name)
+
+
+@app.route('/search')
+def search():
+    query = request.args.get('query')
+
+    # Perform a search in the database based on the query
+    results = perform_search(query)
+
+    return render_template('search_results.html', query=query, results=results)
+
+def perform_search(query):
+    # Example: Search for recipes or cuisines containing the query in name or description
+
+
+    cuisine_results = db.Cuisine.query.filter(db.Cuisine.cuisine_name.ilike(f"%{query}%")).all()
+
+    recipe_results = db.Recipe.query.filter(
+        (db.Recipe.name.ilike(f"%{query}%")) | (db.Recipe.description.ilike(f"%{query}%"))
+    ).all()
+
+    return {'recipes': recipe_results, 'cuisines': cuisine_results}
 
 
 @app.route('/publish', methods=['POST'])
