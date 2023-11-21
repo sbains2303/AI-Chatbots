@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="page-content">
+        {% block header %} <h2><span class="title">Add A New Recipe</span></h2> {% endblock %}
+        <p class="content">To add a new recipe, please enter the details below</p>
+
+<!--        <form>-->
+<!--            <label for="fname" class="content">First name:</label><br>-->
+<!--            <input class="input" id="fname" required><br>-->
+
+<!--            <label for="lname" class="content">Last name:</label><br>-->
+<!--            <input class="input" id="lname" required><br>-->
+
+<!--            <label for="email" class="content">Email:</label><br>-->
+<!--            <input class="input" id="email" required><br>-->
+
+<!--            <label for="bio" class="content">Give a description for your bio:</label><br>-->
+<!--            <input class="inputdesc" id="bio">-->
+
+<!--            <button type="submit">Submit</button>-->
+<!--        </form>-->
+
+        <form>
+            <label for="name" class="content">Author name:</label><br>
+            <input class="input" id="name" required><br>
+
+            <label for="email" class="content">Email:</label><br>
+            <input class="input" id="email" required><br>
+
+            <label for="recipe" class="content">Recipe name:</label><br>
+            <input class="input" id="recipe" required><br>
+
+            <label for="cuisine" class="content">Cuisine:</label><br>
+            <input class="input" id="cuisine" required><br>
+
+            <label for="desc" class="content">Description:</label><br>
+            <textarea class="inputdesc" id="desc" cols="100" rows="5" required></textarea><br>
+
+            <label class="content">Cooking time (hours:minutes):</label><br>
+            <input class="input" type="number" id="hour" name="hour" min="0" max="100" />
+            <p class="content title">:</p>
+            <input class="input" type="number" id="minutes" name="minutes" min="0" max="60" /><br>
+
+            <label for="servings" class="content">Servings:</label><br>
+            <input class="input" type="number" id="servings" min="1" max="50" /><br>
+
+            <p class="content">Ingredients:</p>
+            <form method="post" action="">
+                <textarea class="inputdesc" id="ingredients" name="method" rows="20" cols="70" required></textarea>
+            </form>
+
+<!--            <label for="ingredients" class="content">Ingredients:</label><br>-->
+<!--            <textarea id="ingredients" cols="100" rows="5" required>Give your list of ingredients</textarea><br>-->
+
+<!--            <label for="method" class="content">Method:</label><br>-->
+<!--            <textarea id="method" cols="100" rows="5" required>Give the steps for your recipe</textarea><br>-->
+
+            <p class="content">Method:</p>
+            <form method="post" action="">
+                <textarea class="inputdesc" id="method" name="method" rows="7" cols="100" required></textarea>
+            </form>
+
+            <label for="image" class="content">Attach an image:</label><br>
+            <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg" required /><br>
+
+            <button type="submit" class="button">Submit</button><br>
+        </form>
+    </div>
+{% endblock %}
