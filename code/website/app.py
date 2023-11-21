@@ -13,7 +13,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/recipe/<recipe_name>')
+@app.route('/recipe/<recipe_id>')
 def serveRecipe(recipe_id):
     
     # Query the database to get the recipe details
@@ -41,7 +41,8 @@ def serveRecipe(recipe_id):
                            time=time,
                            ingredients=ingredients,
                            steps=steps,
-                           cuisine_name=cuisine_name)
+                           cuisine_name=cuisine_name, 
+                           recipe_name=recipe_name)
 
 
 @app.route('/search')
