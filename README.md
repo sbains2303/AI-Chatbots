@@ -47,13 +47,26 @@ This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uo
 
 ## Setup and Deployment
 
-**Prerequisites** Clone our github repository: https://github.com/spe-uob/2023-Chatbots.git
+### Prerequisites 
+Clone our GitHub repository: https://github.com/spe-uob/2023-Chatbots.git
 
 **Downloads**: 
 - Python https://www.python.org/downloads/release/python-3120/
-- Flask: via command lines in terminal, pip install flask
-- SQL: pip install mysql-connector-python
+- Flask: 
+  - via command lines in terminal, pip install flask
+- SQL Alchemy: 
+  - `pip install sqlalchemy`
+  - Arch: `Pacman -S python-sqlalchemy`
 - OpenAI
+- Recommended IDE:
+  - JetBrains PyCharm
+
+### Usage
+
+To run the flask server locally:
+- navigate to `code/website`
+- run: `flask run`
+
 
 ## Acknowledgements
 
