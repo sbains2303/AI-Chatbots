@@ -31,3 +31,32 @@ def salmonFishcakes():
 @app.route('/new-recipe')
 def newRecipe():
     return render_template("new-recipe.html")
+
+
+# function addStep() {
+#     // Get user input
+#     var number = document.getElementById("number").value;
+#     var step = document.getElementById("step").value;
+#
+#     // Create a new list item
+#     var listItem = document.createElement("li");
+#     listItem.textContent = number + ". " + step;
+#     listItem.classList.add("content"); // Add the "content" class to the list item
+#
+#     // Create a delete button
+#     var deleteButton = document.createElement("button");
+#     deleteButton.textContent = "Delete";
+#     deleteButton.classList.add("button"); // Add the "button" class to the delete button
+#     deleteButton.onclick = function() {
+#         listItem.remove();
+#     };
+#
+#     // Append the delete button to the list item
+#     listItem.appendChild(deleteButton);
+#
+#     // Append the list item to the ingredient list
+#     document.getElementById("ingredientStep").appendChild(listItem);
+#
+#     // Clear input fields
+#     document.getElementById("methodForm").reset();
+# }

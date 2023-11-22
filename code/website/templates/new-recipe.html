@@ -5,22 +5,6 @@
         {% block header %} <h2><span class="title">Add A New Recipe</span></h2> {% endblock %}
         <p class="content">To add a new recipe, please enter the details below</p>
 
-<!--        <form>-->
-<!--            <label for="fname" class="content">First name:</label><br>-->
-<!--            <input class="input" id="fname" required><br>-->
-
-<!--            <label for="lname" class="content">Last name:</label><br>-->
-<!--            <input class="input" id="lname" required><br>-->
-
-<!--            <label for="email" class="content">Email:</label><br>-->
-<!--            <input class="input" id="email" required><br>-->
-
-<!--            <label for="bio" class="content">Give a description for your bio:</label><br>-->
-<!--            <input class="inputdesc" id="bio">-->
-
-<!--            <button type="submit">Submit</button>-->
-<!--        </form>-->
-
         <form>
             <label for="name" class="content">Author name:</label><br>
             <input class="input" id="name" required><br>
@@ -45,21 +29,94 @@
             <label for="servings" class="content">Servings:</label><br>
             <input class="input" type="number" id="servings" min="1" max="50" /><br>
 
-            <p class="content">Ingredients:</p>
-            <form method="post" action="">
-                <textarea class="inputdesc" id="ingredients" name="method" rows="20" cols="70" required></textarea>
-            </form>
+            <p class="content bold">Ingredients:</p>
 
-<!--            <label for="ingredients" class="content">Ingredients:</label><br>-->
-<!--            <textarea id="ingredients" cols="100" rows="5" required>Give your list of ingredients</textarea><br>-->
+            <form id="ingredientForm">
+                <label for="ingredient" class="content">Ingredient:</label>
+                <input type="text" id="ingredient" required>
 
-<!--            <label for="method" class="content">Method:</label><br>-->
-<!--            <textarea id="method" cols="100" rows="5" required>Give the steps for your recipe</textarea><br>-->
+                <label for="quantity" class="content">Quantity(g):</label>
+                <input type="number" id="quantity" required>
 
-            <p class="content">Method:</p>
-            <form method="post" action="">
-                <textarea class="inputdesc" id="method" name="method" rows="7" cols="100" required></textarea>
-            </form>
+                <button type="button" onclick="addIngredient()" class="button">Add Ingredient</button>
+                </form>
+
+                <ul id="ingredientList"></ul>
+
+                <script>
+                    function addIngredient() {
+                        // Get user input
+                        var ingredient = document.getElementById("ingredient").value;
+                        var quantity = document.getElementById("quantity").value;
+
+                        // Create a new list item
+                        var listItem = document.createElement("li");
+                        listItem.textContent = ingredient + " - " + quantity+"g";
+                        listItem.classList.add("content");
+
+                        // Create a delete button
+                        var deleteButton = document.createElement("button");
+                        deleteButton.textContent = "Delete";
+                        deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                        deleteButton.onclick = function() {
+                            listItem.remove();
+                        };
+
+                        // Append the delete button to the list item
+                        listItem.appendChild(deleteButton);
+
+                        // Append the list item to the ingredient list
+                        document.getElementById("ingredientList").appendChild(listItem);
+
+                        // Clear input fields
+                        document.getElementById("ingredientForm").reset();
+                    }
+                </script>
+
+           <br><p class="content bold">Method:</p>
+
+            <form id="methodForm">
+                <label for="number" class="content">Step:</label>
+                <input type="number" id="number" required>
+
+                <label for="step" class="content">Description:</label>
+                <input type="text" id="step" required>
+
+                <button type="button" onclick="addStep()" class="button">Add Step</button>
+                </form>
+
+                <p id="ingredientStep"></p>
+
+                <script>
+                    var num = 0;
+                    function addStep() {
+                        // Get user input
+                        var number = document.getElementById("number").value;
+                        var step = document.getElementById("step").value;
+
+                        // Create a new list item
+                        var listItem = document.createElement("li");
+                        listItem.textContent = number + ". " + step;
+                        listItem.classList.add("content"); // Add the "content" class to the list item
+
+                        // Create a delete button
+                        var deleteButton = document.createElement("button");
+                        deleteButton.textContent = "Delete";
+                        deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                        deleteButton.onclick = function() {
+                            listItem.remove();
+                        };
+
+                        // Append the delete button to the list item
+                        listItem.appendChild(deleteButton);
+
+                        // Append the list item to the ingredient list
+                        document.getElementById("ingredientStep").appendChild(listItem);
+
+                        // Clear input fields
+                        document.getElementById("methodForm").reset();
+                    }
+                </script>
 
             <label for="image" class="content">Attach an image:</label><br>
             <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg" required /><br>
