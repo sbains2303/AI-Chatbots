@@ -1,0 +1,41 @@
+:root {
+    --bs-body-font-family: 'Rubik', sans-serif;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+/* If you want to specify the font for specific elements within the navbar */
+.navbar .navbar-brand {
+    font-family: var(--bs-body-font-family);
+    font-size: 2rem;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-family: var(--bs-body-font-family);
+    font-size: 1rem;
+}
+
+.bg-steel {
+    background-color: black;
+    margin-top: 0;
+}
+
+.intro {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.carousel {
+    max-width: 352px;
+    margin: 100px;
+}
+
+.carousel-inner {
+    max-height: 300px;
+}
+
+.carousel-item {
+    text-align: center; /* Center the content inside each carousel item */
+}
