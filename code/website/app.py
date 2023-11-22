@@ -42,7 +42,7 @@ def serveRecipe(recipe_id):
                            ingredients=ingredients,
                            steps=steps,
                            cuisine_name=cuisine_name, 
-                           recipe_name=recipe_name)
+                            )
 
 
 @app.route('/search')
