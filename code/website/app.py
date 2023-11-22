@@ -37,6 +37,9 @@ def salmonFishcakes():
 def newRecipe():
     return render_template("new-recipe.html")
 
+@app.route('/carousel_test')
+def carousel_test():
+    return render_template("carousel_test.html")
 
 @app.route('/recipe/<recipe_id>')
 def serveRecipe(recipe_id):
@@ -55,24 +58,28 @@ def serveRecipe(recipe_id):
     time = recipe.cooking_time
     cuisine_name = recipe.cuisine.cuisine_name
 
-    return render_template("build_recipe.html",
-                           author_name=author_name,
-                           email=email,
-                           recipe_name=recipe_name,
-                           recipe_desc=recipe.description,
-                           serves=serves,
-                           image=image,
-                           time=time,
-                           ingredients=ingredients,
-                           steps=steps,
-                           cuisine_name=cuisine_name,
+    success_message = request.args.get('Your recipe has been added!',None)
+    return render_template("new-recipe.html",
+                           title=recipe_name,
+                           Img=image,  # Assuming 'image' is the URL or path to the image
+                           Description=recipe.description,
+                           Cuisine=cuisine_name,
+                           Time=time,
+                           Serves=serves,
+                           ingredient_list=ingredients,
+                           method_list=steps,
+                           Author=author_name,
+                           success_message=success_message,
                            )
 
+@app.route('/cuisine/<string:cuisine_name>')
+def cuisine(cuisine_name):
+    return render_template('cuisine_display.html', cuisine_name=cuisine_name)
 
-@app.route('/search')
+
+@app.route('/search', methods=['GET'])
 def search():
-    query = request.args.get('query')
-
+    query = request.args.get(key='query')
     # Perform a search in the database based on the query
     results = perform_search(query)
 
@@ -89,7 +96,6 @@ def perform_search(query):
     ).all()
 
     return {'recipes': recipe_results, 'cuisines': cuisine_results}
-
 
 
 @app.route('/publish', methods=['POST'])
@@ -144,4 +150,5 @@ def publish():
 
     db.session.commit()
 
-    return 'Recipe inserted successfully'
+    # return 'Recipe inserted successfully'
+    return redirect(url_for('serveRecipe', recipe_id=recipe.id, success_message='Recipe inserted successfully'))

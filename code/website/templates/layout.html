@@ -36,6 +36,9 @@
                 Recipes
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/cuisine/Indian">Indian</a></li>
+                <li><a class="dropdown-item" href="/cuisine/Korean">Korean</a></li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/chicken-korma">Chicken Korma</a></li>
                 <li><a class="dropdown-item" href="/salmon-fishcakes">Salmon Fishcakes</a></li>
                 <li><a class="dropdown-item" href="/scrambled-eggs">Scrambled Eggs</a></li>
@@ -45,12 +48,20 @@
             </li>
           </ul>
            <form action="{{ url_for('search') }}" method="get">
-             <input type="text" name="query" placeholder="Search for recipes or cuisines">
-             <button type="submit">Search</button>
+             <input  class="content" type="text" name="query" placeholder="Search for recipes or cuisines">
+             <button type="submit" class="btn btn-outline-success">Search</button>
            </form>
         </div>
       </div>
     </nav>
+    <script>
+      $(document).ready(function() {
+        $(".dropdown-item").click(function () {
+            var selectedPage = $(this).attr('href');
+            window.location.href = selectedPage;
+        });
+      });
+    </script>
   </div>
 
   {% block content %}{% endblock %}
