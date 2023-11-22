@@ -6,7 +6,6 @@ body {
     font-family: var(--bs-body-font-family);
 }
 
-
 .navbar .navbar-brand {
     font-family: var(--bs-body-font-family);
     font-size: 1.5rem;
@@ -26,19 +25,6 @@ body {
     font-size: 1.5rem;
     text-align: center;
 }
-
-
-.carousel {
-    max-width: 352px;
-    margin: 100px;
-}
-
-.carousel-inner {
-    max-height: 300px;
-}
-
-.carousel-item {
-    text-align: center; /* Center the content inside each carousel item */
 
 .page-content{
     margin-left: 1rem;
