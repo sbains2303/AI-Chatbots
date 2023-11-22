@@ -6,10 +6,10 @@ body {
     font-family: var(--bs-body-font-family);
 }
 
-/* If you want to specify the font for specific elements within the navbar */
+
 .navbar .navbar-brand {
     font-family: var(--bs-body-font-family);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -27,6 +27,7 @@ body {
     text-align: center;
 }
 
+
 .carousel {
     max-width: 352px;
     margin: 100px;
@@ -38,4 +39,124 @@ body {
 
 .carousel-item {
     text-align: center; /* Center the content inside each carousel item */
+
+.page-content{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+h2 {
+    margin-top: 0.5rem;
+}
+
+.title{
+    display:inline-block;
+}
+
+.label {
+  padding:0.3rem;
+  font-size: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.content {
+    font-size: 1rem;
+}
+
+.lists {
+    font-size: 1rem;
+    padding-bottom:1rem;
+}
+
+.step {
+    font-weight: bold;
+    font-size: 1rem;
+    padding-bottom:0.3rem;
+}
+
+.description {
+    line-height: 1;
+}
+
+.input:hover {
+  box-shadow:0 0 5px 0.5px white;
+}
+
+.input, textarea {
+  font-family:inherit;
+  font-size: 1rem;
+}
+
+.input {
+      border:none;
+      min-height: 1rem;
+      min-width: 5rem;
+      border-radius:10px;
+}
+
+.inputdesc {
+    border: none;
+    min-height: 100px;
+    min-width: 5rem;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 10px;
+}
+
+.inputdesc:hover {
+    box-shadow: 0 0 5px 0.5px white;
+}
+
+textarea {
+    resize: none;
+}
+
+.button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 3rem;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.buttonFile {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    background-color: #595F58;
+  }
+
+.buttonFile::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.buttonFile::before {
+    content: 'Select a file';
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.buttonFile::after {
+    content: 'File selected: ' attr(data-file-name);
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
 }

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import yaml
 
 
 app = Flask(__name__, static_url_path='/static')
@@ -8,16 +9,38 @@ app.config['DATABASE'] = 'cookbook.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cookbook.db'
 db = SQLAlchemy(app)
 
-
 @app.route('/')
-def index():
-    return render_template("index.html")
+def home():
+    return render_template("layout.html")
 
+with open("templates/scrambled-eggs-content.yaml", "r") as file:
+    scrambled_eggs_content = yaml.safe_load(file)
 
+@app.route('/scrambled-eggs')
+def scrambledEggs():
+    return render_template("recipes.html", **scrambled_eggs_content)
+
+with open("templates/chicken-korma.yaml", "r") as file:
+    chicken_korma_content = yaml.safe_load(file)
+
+ @app.route('/chicken-korma')
+def chickenKorma():
+    return render_template("recipes.html", **chicken_korma_content)
+
+with open("templates/salmon-fishcakes-content.yaml", "r") as file:
+    salmon_fishcakes_content = yaml.safe_load(file)
+
+@app.route('/salmon-fishcakes')
+def salmonFishcakes():
+    return render_template("recipes.html", **salmon_fishcakes_content)
+
+@app.route('/new-recipe')
+def newRecipe():
+    return render_template("new-recipe.html")
+  
 @app.route('/carousel_test')
 def carousel_test():
     return render_template("carousel_test.html")
-
 
 @app.route('/recipe/<recipe_id>')
 def serveRecipe(recipe_id):
