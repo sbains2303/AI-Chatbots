@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
@@ -16,25 +16,26 @@
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
 	</ol>
 
 	<div class="carousel-inner">
 		<div class="item active">
-			<img src="{{ url_for('static', filename='images/Smoked-Salmon-Sushi-Roll.jpg') }}" alt="Smoked Salmon Sushi Roll" width="800" height="600">
+			<img src="{{ url_for('static', filename='images/Smoked-Salmon-Sushi-Roll.jpg') }}" alt="Smoked Salmon Sushi Roll" width="352" height="300">
 			<div class="carousel-caption">
           		<h5 class="display-2"><a href="/smoked-salmon-sushi-roll">Smoked Salmon Sushi Roll</a></h5>
 			</div>
 		</div>
 		<div class="item">
-			<img src="{{ url_for('static', filename='images/Fish-and-Chips.jpg') }}" alt="Fish and Chips" width="800" height="600">
+			<img src="{{ url_for('static', filename='images/Fish-and-Chips.jpg') }}" alt="Fish and Chips" width="352" height="300">
 			<div class="carousel-caption">Fish and Chips</div>
 		</div>
 		<div class="item">
-			<img src="{{ url_for('static', filename='images/Peking-Duck.jpg') }}" alt="Peking Duck" width="800" height="600">
+			<img src="{{ url_for('static', filename='images/Peking-Duck.jpg') }}" alt="Peking Duck" width="352" height="300">
 			<div class="carousel-caption">Peking Duck</div>
 		</div>
 		<div class="item">
-			<img src="{{ url_for('static', filename='images/slide1.png') }}" alt="Chicken Korma" width="800" height="600">
+			<img src="{{ url_for('static', filename='images/slide1.png') }}" alt="Chicken Korma" width="352" height="300">
 			<div class="carousel-caption">
 				<h5 class="display-2"><a href="/chicken-korma">Chicken Korma</a></h5>
 			</div>
