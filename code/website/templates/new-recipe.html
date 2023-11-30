@@ -5,33 +5,33 @@
         {% block header %} <h2><span class="title">Add A New Recipe</span></h2> {% endblock %}
         <p class="content">To add a new recipe, please enter the details below</p>
 
-        <form>
+        <form action="/publish" method="POST">
+
             <label for="name" class="content">Author name:</label><br>
-            <input class="input" id="name" required><br>
+            <input class="input" name = "authorname" id="name" required><br>
 
             <label for="email" class="content">Email:</label><br>
-            <input class="input" id="email" required><br>
+            <input class="input" name="email" id="email" type="email" required><br>
 
             <label for="recipe" class="content">Recipe name:</label><br>
-            <input class="input" id="recipe" required><br>
+            <input class="input" id="recipe" name="recipename" required><br>
 
             <label for="cuisine" class="content">Cuisine:</label><br>
-            <input class="input" id="cuisine" required><br>
+            <input class="input" id="cuisine" name="cuisine" required><br>
 
             <label for="desc" class="content">Description:</label><br>
-            <textarea class="inputdesc" id="desc" cols="100" rows="5" required></textarea><br>
+            <textarea class="inputdesc" name="recipedesc" id="desc" cols="100" rows="5" required></textarea><br>
 
-            <label class="content">Cooking time (hours:minutes):</label><br>
-            <input class="input" type="number" id="hour" name="hour" min="0" max="100" />
-            <p class="content title">:</p>
-            <input class="input" type="number" id="minutes" name="minutes" min="0" max="60" /><br>
+            <label class="content">Cooking time:</label><br>
+            <input class="input" type="number" id="hour" name="time" min="0" max="100" />
 
             <label for="servings" class="content">Servings:</label><br>
-            <input class="input" type="number" id="servings" min="1" max="50" /><br>
+            <input class="input" type="number" name = "serves" id="servings" min="1" max="50" /><br>
 
             <p class="content bold">Ingredients:</p>
 
-            <form id="ingredientForm">
+            <!-- <form id="ingredientForm" name="ingredients"> -->
+            <div class="ingredientForm" name="ingredients">
                 <label for="ingredient" class="content">Ingredient:</label>
                 <input type="text" id="ingredient" required>
 
@@ -39,7 +39,8 @@
                 <input type="number" id="quantity" required>
 
                 <button type="button" onclick="addIngredient()" class="button">Add Ingredient</button>
-                </form>
+                <!-- </form> -->
+            </div>
 
                 <ul id="ingredientList"></ul>
 
@@ -51,7 +52,7 @@
 
                         // Create a new list item
                         var listItem = document.createElement("li");
-                        listItem.textContent = ingredient + " - " + quantity+"g";
+                        listItem.textContent = ingredient + ": " + quantity;
                         listItem.classList.add("content");
 
                         // Create a delete button
@@ -69,13 +70,16 @@
                         document.getElementById("ingredientList").appendChild(listItem);
 
                         // Clear input fields
-                        document.getElementById("ingredientForm").reset();
+                        // document.getElementById("ingredientForm").reset();
                     }
                 </script>
 
            <br><p class="content bold">Method:</p>
 
-            <form id="methodForm">
+            <!-- <form id="methodForm" name="steps" action="/publish"> -->
+                <div id="methodForm" name="steps">
+
+
                 <label for="number" class="content">Step:</label>
                 <input type="number" id="number" required>
 
@@ -83,7 +87,8 @@
                 <input type="text" id="step" required>
 
                 <button type="button" onclick="addStep()" class="button">Add Step</button>
-                </form>
+                <!-- </form> -->
+            </div>
 
                 <p id="ingredientStep"></p>
 
@@ -114,14 +119,26 @@
                         document.getElementById("ingredientStep").appendChild(listItem);
 
                         // Clear input fields
-                        document.getElementById("methodForm").reset();
+                        // document.getElementById("methodForm").reset();
+                    }
+                    
+                    function submitForm(event) {
+                    // Prevent the default form submission behavior
+                        event.preventDefault();
+    
+        
+                    // Submit the form
+                        document.forms[0].submit();
                     }
                 </script>
 
             <label for="image" class="content">Attach an image:</label><br>
-            <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg" required /><br>
+            <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg, image/jpg" required /><br>
 
             <button type="submit" class="button">Submit</button><br>
+            
         </form>
+
+        
     </div>
 {% endblock %}
