@@ -12,26 +12,26 @@ db = SQLAlchemy(app)
 def home():
     return render_template("layout.html")
 
-# with open("templates/scrambled-eggs-content.yaml", "r") as file:
-#     scrambled_eggs_content = yaml.safe_load(file)
+with open("templates/scrambled-eggs-content.yaml", "r") as file:
+    scrambled_eggs_content = yaml.safe_load(file)
 
-# @app.route('/scrambled-eggs')
-# def scrambledEggs():
-#     return render_template("recipes.html", **scrambled_eggs_content)
+@app.route('/scrambled-eggs')
+def scrambledEggs():
+    return render_template("recipes.html", **scrambled_eggs_content)
 
-# with open("templates/chicken-korma.yaml", "r") as file:
-#     chicken_korma_content = yaml.safe_load(file)
+with open("templates/chicken-korma.yaml", "r") as file:
+    chicken_korma_content = yaml.safe_load(file)
 
-# @app.route('/chicken-korma')
-# def chickenKorma():
-#     return render_template("recipes.html", **chicken_korma_content)
+@app.route('/chicken-korma')
+def chickenKorma():
+    return render_template("recipes.html", **chicken_korma_content)
 
-# with open("templates/salmon-fishcakes-content.yaml", "r") as file:
-#     salmon_fishcakes_content = yaml.safe_load(file)
+with open("templates/salmon-fishcakes-content.yaml", "r") as file:
+    salmon_fishcakes_content = yaml.safe_load(file)
 
-# @app.route('/salmon-fishcakes')
-# def salmonFishcakes():
-#     return render_template("recipes.html", **salmon_fishcakes_content)
+@app.route('/salmon-fishcakes')
+def salmonFishcakes():
+    return render_template("recipes.html", **salmon_fishcakes_content)
 
 # @app.route('/new-recipe')
 # def newRecipe():
@@ -101,7 +101,7 @@ def publish():
         recipe_desc = request.form['recipedesc']
         serves = request.form['serves']
         image = request.files['image'].read()
-        time = request.form['time']
+        time = (request.form['hour']*60)+(request.form['minutes'])
         ingredients = eval(request.form['ingredients'])  # Assuming the ingredients are a list of pairs
         steps = eval(request.form['steps'])  # Assuming the steps are a list
         cuisine_name = request.form['cuisine']

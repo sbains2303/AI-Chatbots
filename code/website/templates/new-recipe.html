@@ -1,144 +1,146 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="page-content">
-        {% block header %} <h2><span class="title">Add A New Recipe</span></h2> {% endblock %}
-        <p class="content">To add a new recipe, please enter the details below</p>
+    <div class="page">
+        <div class="page-content">
+            {% block header %} <h2 ><span class="title">Add A New Recipe</span></h2> {% endblock %}
+            <p class="content">To add a new recipe, please enter the details below</p>
 
-        <form action="/publish" method="POST">
+            <form action="/publish" method="POST">
+                <label for="name" class="content">Author name:</label><br>
+                <input class="input" name = "authorname" id="name" required><br>
 
-            <label for="name" class="content">Author name:</label><br>
-            <input class="input" name = "authorname" id="name" required><br>
+                <label for="email" class="content">Email:</label><br>
+                <input class="input" name="email" id="email" type="email" required><br>
 
-            <label for="email" class="content">Email:</label><br>
-            <input class="input" name="email" id="email" type="email" required><br>
+                <label for="recipe" class="content">Recipe name:</label><br>
+                <input class="input" id="recipe" name="recipename" required><br>
 
-            <label for="recipe" class="content">Recipe name:</label><br>
-            <input class="input" id="recipe" name="recipename" required><br>
+                <label for="cuisine" class="content">Cuisine:</label><br>
+                <input class="input" id="cuisine" name="cuisine" required><br>
 
-            <label for="cuisine" class="content">Cuisine:</label><br>
-            <input class="input" id="cuisine" name="cuisine" required><br>
+                <label for="desc" class="content">Description:</label><br>
+                <textarea class="inputdesc" name="recipedesc" id="desc" cols="100" rows="5" required></textarea><br>
 
-            <label for="desc" class="content">Description:</label><br>
-            <textarea class="inputdesc" name="recipedesc" id="desc" cols="100" rows="5" required></textarea><br>
+                <label class="content">Cooking time (hours:minutes):</label><br>
+                <input class="input" type="number" id="hour" name="hour" min="0" max="100" />
+                <p class="content title">:</p>
+                <input class="input" type="number" id="minutes" name="minutes" min="0" max="60" /><br>
 
-            <label class="content">Cooking time:</label><br>
-            <input class="input" type="number" id="hour" name="time" min="0" max="100" />
+                <label for="servings" class="content">Servings:</label><br>
+                <input class="input" type="number" name = "serves" id="servings" min="1" max="50" /><br>
 
-            <label for="servings" class="content">Servings:</label><br>
-            <input class="input" type="number" name = "serves" id="servings" min="1" max="50" /><br>
+                <p class="content">Ingredients:</p>
 
-            <p class="content bold">Ingredients:</p>
+                <!-- <form id="ingredientForm" name="ingredients"> -->
+                <div class="ingredientForm" name="ingredients">
+                    <label for="ingredient" class="content">Ingredient:</label>
+                    <input type="text" id="ingredient" class="input" required>
 
-            <!-- <form id="ingredientForm" name="ingredients"> -->
-            <div class="ingredientForm" name="ingredients">
-                <label for="ingredient" class="content">Ingredient:</label>
-                <input type="text" id="ingredient" required>
+                    <label for="quantity" class="content">Quantity(g):</label>
+                    <input type="number" id="quantity" class="step" required>
 
-                <label for="quantity" class="content">Quantity(g):</label>
-                <input type="number" id="quantity" required>
+                    <button type="button" onclick="addIngredient()" class="button">Add Ingredient</button>
+                    <!-- </form> -->
+                </div>
 
-                <button type="button" onclick="addIngredient()" class="button">Add Ingredient</button>
-                <!-- </form> -->
-            </div>
+                    <ul id="ingredientList"></ul>
 
-                <ul id="ingredientList"></ul>
+                    <script>
+                        function addIngredient() {
+                            // Get user input
+                            var ingredient = document.getElementById("ingredient").value;
+                            var quantity = document.getElementById("quantity").value;
 
-                <script>
-                    function addIngredient() {
-                        // Get user input
-                        var ingredient = document.getElementById("ingredient").value;
-                        var quantity = document.getElementById("quantity").value;
+                            // Create a new list item
+                            var listItem = document.createElement("li");
+                            listItem.textContent = ingredient + ": " + quantity;
+                            listItem.classList.add("content");
 
-                        // Create a new list item
-                        var listItem = document.createElement("li");
-                        listItem.textContent = ingredient + ": " + quantity;
-                        listItem.classList.add("content");
+                            // Create a delete button
+                            var deleteButton = document.createElement("button");
+                            deleteButton.textContent = "Delete";
+                            deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                            deleteButton.onclick = function() {
+                                listItem.remove();
+                            };
 
-                        // Create a delete button
-                        var deleteButton = document.createElement("button");
-                        deleteButton.textContent = "Delete";
-                        deleteButton.classList.add("delete"); // Add the "button" class to the delete button
-                        deleteButton.onclick = function() {
-                            listItem.remove();
-                        };
+                            // Append the delete button to the list item
+                            listItem.appendChild(deleteButton);
 
-                        // Append the delete button to the list item
-                        listItem.appendChild(deleteButton);
+                            // Append the list item to the ingredient list
+                            document.getElementById("ingredientList").appendChild(listItem);
 
-                        // Append the list item to the ingredient list
-                        document.getElementById("ingredientList").appendChild(listItem);
+                            // Clear input fields
+                            // document.getElementById("ingredientForm").reset();
+                        }
+                    </script>
 
-                        // Clear input fields
-                        // document.getElementById("ingredientForm").reset();
-                    }
-                </script>
+               <br><p class="content">Method:</p>
 
-           <br><p class="content bold">Method:</p>
-
-            <!-- <form id="methodForm" name="steps" action="/publish"> -->
-                <div id="methodForm" name="steps">
+                <!-- <form id="methodForm" name="steps" action="/publish"> -->
+                    <div id="methodForm" name="steps">
 
 
-                <label for="number" class="content">Step:</label>
-                <input type="number" id="number" required>
+                    <label for="number" class="content">Step:</label>
+                    <input type="number" id="number" class="step" required>
 
-                <label for="step" class="content">Description:</label>
-                <input type="text" id="step" required>
+                    <label for="step" class="content">Description:</label>
+                    <input type="text" id="step" class="line" required>
 
-                <button type="button" onclick="addStep()" class="button">Add Step</button>
-                <!-- </form> -->
-            </div>
+                    <button type="button" onclick="addStep()" class="button">Add Step</button>
+                    <!-- </form> -->
+                </div>
 
-                <p id="ingredientStep"></p>
+                    <p id="ingredientStep"></p>
 
-                <script>
-                    var num = 0;
-                    function addStep() {
-                        // Get user input
-                        var number = document.getElementById("number").value;
-                        var step = document.getElementById("step").value;
+                    <script>
+                        var num = 0;
+                        function addStep() {
+                            // Get user input
+                            var number = document.getElementById("number").value;
+                            var step = document.getElementById("step").value;
 
-                        // Create a new list item
-                        var listItem = document.createElement("li");
-                        listItem.textContent = number + ". " + step;
-                        listItem.classList.add("content"); // Add the "content" class to the list item
+                            // Create a new list item
+                            var listItem = document.createElement("li");
+                            listItem.textContent = number + ". " + step;
+                            listItem.classList.add("content"); // Add the "content" class to the list item
 
-                        // Create a delete button
-                        var deleteButton = document.createElement("button");
-                        deleteButton.textContent = "Delete";
-                        deleteButton.classList.add("delete"); // Add the "button" class to the delete button
-                        deleteButton.onclick = function() {
-                            listItem.remove();
-                        };
+                            // Create a delete button
+                            var deleteButton = document.createElement("button");
+                            deleteButton.textContent = "Delete";
+                            deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                            deleteButton.onclick = function() {
+                                listItem.remove();
+                            };
 
-                        // Append the delete button to the list item
-                        listItem.appendChild(deleteButton);
+                            // Append the delete button to the list item
+                            listItem.appendChild(deleteButton);
 
-                        // Append the list item to the ingredient list
-                        document.getElementById("ingredientStep").appendChild(listItem);
+                            // Append the list item to the ingredient list
+                            document.getElementById("ingredientStep").appendChild(listItem);
 
-                        // Clear input fields
-                        // document.getElementById("methodForm").reset();
-                    }
-                    
-                    function submitForm(event) {
-                    // Prevent the default form submission behavior
-                        event.preventDefault();
-    
-        
-                    // Submit the form
-                        document.forms[0].submit();
-                    }
-                </script>
+                            // Clear input fields
+                            // document.getElementById("methodForm").reset();
+                        }
 
-            <label for="image" class="content">Attach an image:</label><br>
-            <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg, image/jpg" required /><br>
+                        function submitForm(event) {
+                        // Prevent the default form submission behavior
+                            event.preventDefault();
 
-            <button type="submit" class="button">Submit</button><br>
-            
-        </form>
 
-        
+                        // Submit the form
+                            document.forms[0].submit();
+                        }
+                    </script>
+
+                <label for="image" class="content">Attach an image:</label><br>
+                <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg, image/jpg" required /><br>
+
+                <button type="submit" class="button">Submit</button><br>
+
+            </form>
+
+        </div>
     </div>
 {% endblock %}

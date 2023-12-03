@@ -17,7 +17,7 @@ body {
 }
 
 .bg-steel {
-    background-color: black;
+    background-color: #0F204D;
     margin-top: 0;
 }
 
@@ -26,13 +26,27 @@ body {
     text-align: center;
 }
 
+.page {
+    background-color:  #0F204D;
+}
+
+.border {
+    background-color: #4564B9;
+}
+
 .page-content{
     margin-left: 1rem;
     font-size: 1.5rem;
+    color: white;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
-h2 {
-    margin-top: 0.5rem;
+.page-content-make {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: white;
 }
 
 .title{
@@ -89,7 +103,7 @@ h2 {
     min-width: 5rem;
     border-radius: 10px;
     font-family: inherit;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .inputdesc:hover {
@@ -100,43 +114,58 @@ textarea {
     resize: none;
 }
 
+.step {
+    border:none;
+    border-radius:10px;
+    width: 4rem;
+}
+
+.line {
+    border:none;
+    border-radius:10px;
+    width: 400px;
+    height: 140px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.line:hover {
+    box-shadow: 0 0 5px 0.5px white;
+}
+
 .button {
-    background-color: #4caf50;
+    background-color: #0E286F;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-bottom: 3rem;
 }
 
 .searchButton {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+    background-color: #0E286F;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
+    font-family: var(--bs-body-font-family);
+    font-size: 1rem;
+    width: 250px;
 }
 
 .delete {
-    background-color: #red;
+    background-color: red;
     color: #fff;
     padding: 10px 20px;
     font-size: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     height: 2rem;
     margin-left: 3rem;
     margin-bottom:1rem;
 }
 
-.button:hover {
-    background-color: #45a049;
-}
 
 .buttonFile {
     padding: 10px;
@@ -144,7 +173,8 @@ textarea {
     border-radius: 5px;
     font-size: 16px;
     margin-bottom: 1rem;
-    background-color: #595F58;
+    background-color: white;
+    color: #0E286F;
   }
 
 .buttonFile::-webkit-file-upload-button {
@@ -154,8 +184,7 @@ textarea {
 .buttonFile::before {
     content: 'Select a file';
     display: inline-block;
-    background-color: #3498db;
-    color: #fff;
+    color: black;
     border: 1px solid #3498db;
     border-radius: 5px;
     padding: 8px 12px;
