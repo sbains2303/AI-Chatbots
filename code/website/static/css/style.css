@@ -114,6 +114,14 @@ textarea {
     resize: none;
 }
 
+.welcome{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
 .button {
     background-color: #4caf50;
     color: #fff;
