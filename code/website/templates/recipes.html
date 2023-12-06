@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
+{% set is_extended = True %}
 
 {% block content %}
     <div class="page">
-        <div class="page-content-make">
+        <div class="page-content-make rubik">
             <h2><span class="title">{{ title }}</span></h2>
 
-            {% if Img %}
-                <div class="image-content">
-                    <img src="{{ Img }}" alt="Recipe Image">
-                </div>
-            {% endif %}
 
             <p><span class="content description">{{ Description }}</span></p>
+
+            {% if Img %}
+                <img src="{{ url_for('static', filename='images/scrambled-eggs-image.jpg') }}" alt="Recipe Image" width="230" height="200">
+            {% endif %}
+
             <p><span class="label">Cuisine:</span> <span class="content">{{ Cuisine }}</span></p>
             <p><span class="label bold">Time:</span> <span class="content bold">{{ Time }}</span></p>
             <p><span class="label bold">Serves:</span> <span class="content bold">{{ Serves }}</span></p>

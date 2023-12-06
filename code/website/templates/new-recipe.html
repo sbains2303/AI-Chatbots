@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
+{% set is_extended = True %}
 
 {% block content %}
     <div class="page">
-        <div class="page-content">
+        <div class="page-content rubik form-box">
             {% block header %} <h2 ><span class="title">Add A New Recipe</span></h2> {% endblock %}
             <p class="content">To add a new recipe, please enter the details below</p>
 
@@ -24,115 +25,118 @@
 
                 <label class="content">Cooking time (hours:minutes):</label><br>
                 <input class="input" type="number" id="hour" name="hour" min="0" max="100" />
-                <p class="content title">:</p>
+                <p class="content title">: </p>
                 <input class="input" type="number" id="minutes" name="minutes" min="0" max="60" /><br>
 
                 <label for="servings" class="content">Servings:</label><br>
                 <input class="input" type="number" name = "serves" id="servings" min="1" max="50" /><br>
 
-                <p class="content">Ingredients:</p>
+                <div class="section-box">
+                    <br><p class="content section-title">Ingredients:</p>
 
-                <!-- <form id="ingredientForm" name="ingredients"> -->
-                <div class="ingredientForm" name="ingredients">
-                    <label for="ingredient" class="content">Ingredient:</label>
-                    <input type="text" id="ingredient" class="input" required>
+                    <div class="ingredientForm" name="ingredients">
+                        <label for="ingredient" class="content">Ingredient:</label>
+                        <input type="text" id="ingredient" class="input" required>
 
-                    <label for="quantity" class="content">Quantity(g):</label>
-                    <input type="number" id="quantity" class="step" required>
+                        <label for="quantity" class="content">Quantity(g):</label>
+                        <input type="number" id="quantity" class="step" required><br>
 
-                    <button type="button" onclick="addIngredient()" class="button">Add Ingredient</button>
-                    <!-- </form> -->
-                </div>
+                        <button type="button" onclick="addIngredient()" class="button">Add</button>
+                        <!-- </form> -->
+                    </div>
 
-                    <ul id="ingredientList"></ul>
+                        <ul id="ingredientList"></ul>
 
-                    <script>
-                        function addIngredient() {
-                            // Get user input
-                            var ingredient = document.getElementById("ingredient").value;
-                            var quantity = document.getElementById("quantity").value;
+                        <script>
+                            function addIngredient() {
+                                // Get user input
+                                var ingredient = document.getElementById("ingredient").value;
+                                var quantity = document.getElementById("quantity").value;
 
-                            // Create a new list item
-                            var listItem = document.createElement("li");
-                            listItem.textContent = ingredient + ": " + quantity;
-                            listItem.classList.add("content");
+                                // Create a new list item
+                                var listItem = document.createElement("li");
+                                listItem.textContent = ingredient + ": " + quantity;
+                                listItem.classList.add("content");
 
-                            // Create a delete button
-                            var deleteButton = document.createElement("button");
-                            deleteButton.textContent = "Delete";
-                            deleteButton.classList.add("delete"); // Add the "button" class to the delete button
-                            deleteButton.onclick = function() {
-                                listItem.remove();
-                            };
+                                // Create a delete button
+                                var deleteButton = document.createElement("button");
+                                deleteButton.textContent = "Delete";
+                                deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                                deleteButton.onclick = function() {
+                                    listItem.remove();
+                                };
 
-                            // Append the delete button to the list item
-                            listItem.appendChild(deleteButton);
+                                // Append the delete button to the list item
+                                listItem.appendChild(deleteButton);
 
-                            // Append the list item to the ingredient list
-                            document.getElementById("ingredientList").appendChild(listItem);
+                                // Append the list item to the ingredient list
+                                document.getElementById("ingredientList").appendChild(listItem);
 
-                            // Clear input fields
-                            // document.getElementById("ingredientForm").reset();
-                        }
-                    </script>
+                                // Clear input fields
+                                // document.getElementById("ingredientForm").reset();
+                            }
+                        </script>
+                    </div>
 
-               <br><p class="content">Method:</p>
+               <div class="section-box">
+                   <br><p class="content section-title">Method:</p>
 
-                <!-- <form id="methodForm" name="steps" action="/publish"> -->
-                    <div id="methodForm" name="steps">
-
-
-                    <label for="number" class="content">Step:</label>
-                    <input type="number" id="number" class="step" required>
-
-                    <label for="step" class="content">Description:</label>
-                    <input type="text" id="step" class="line" required>
-
-                    <button type="button" onclick="addStep()" class="button">Add Step</button>
-                    <!-- </form> -->
-                </div>
-
-                    <p id="ingredientStep"></p>
-
-                    <script>
-                        var num = 0;
-                        function addStep() {
-                            // Get user input
-                            var number = document.getElementById("number").value;
-                            var step = document.getElementById("step").value;
-
-                            // Create a new list item
-                            var listItem = document.createElement("li");
-                            listItem.textContent = number + ". " + step;
-                            listItem.classList.add("content"); // Add the "content" class to the list item
-
-                            // Create a delete button
-                            var deleteButton = document.createElement("button");
-                            deleteButton.textContent = "Delete";
-                            deleteButton.classList.add("delete"); // Add the "button" class to the delete button
-                            deleteButton.onclick = function() {
-                                listItem.remove();
-                            };
-
-                            // Append the delete button to the list item
-                            listItem.appendChild(deleteButton);
-
-                            // Append the list item to the ingredient list
-                            document.getElementById("ingredientStep").appendChild(listItem);
-
-                            // Clear input fields
-                            // document.getElementById("methodForm").reset();
-                        }
-
-                        function submitForm(event) {
-                        // Prevent the default form submission behavior
-                            event.preventDefault();
+                    <!-- <form id="methodForm" name="steps" action="/publish"> -->
+                        <div id="methodForm" name="steps">
 
 
-                        // Submit the form
-                            document.forms[0].submit();
-                        }
-                    </script>
+                        <label for="number" class="content">Step:</label>
+                        <input type="number" id="number" class="step extra" required><br>
+
+                        <label for="step" class="content">Description:</label>
+                        <input type="text" id="step" class="line" required><br>
+
+                        <button type="button" onclick="addStep()" class="button">Add</button>
+                        <!-- </form> -->
+                    </div>
+
+                        <p id="ingredientStep"></p>
+
+                        <script>
+                            var num = 0;
+                            function addStep() {
+                                // Get user input
+                                var number = document.getElementById("number").value;
+                                var step = document.getElementById("step").value;
+
+                                // Create a new list item
+                                var listItem = document.createElement("li");
+                                listItem.textContent = number + ". " + step;
+                                listItem.classList.add("content"); // Add the "content" class to the list item
+
+                                // Create a delete button
+                                var deleteButton = document.createElement("button");
+                                deleteButton.textContent = "Delete";
+                                deleteButton.classList.add("delete"); // Add the "button" class to the delete button
+                                deleteButton.onclick = function() {
+                                    listItem.remove();
+                                };
+
+                                // Append the delete button to the list item
+                                listItem.appendChild(deleteButton);
+
+                                // Append the list item to the ingredient list
+                                document.getElementById("ingredientStep").appendChild(listItem);
+
+                                // Clear input fields
+                                // document.getElementById("methodForm").reset();
+                            }
+
+                            function submitForm(event) {
+                            // Prevent the default form submission behavior
+                                event.preventDefault();
+
+
+                            // Submit the form
+                                document.forms[0].submit();
+                            }
+                        </script>
+                   </div>
 
                 <label for="image" class="content">Attach an image:</label><br>
                 <input type="file" class="buttonFile" id="image" accept="image/png, image/jpeg, image/jpg" required /><br>
