@@ -4,6 +4,7 @@ import yaml
 
 app = Flask(__name__, static_url_path='/static')
 
+
 app.config['DATABASE'] = 'cookbook.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cookbook.db'
 db = SQLAlchemy(app)
@@ -33,13 +34,10 @@ with open("templates/salmon-fishcakes-content.yaml", "r") as file:
 def salmonFishcakes():
     return render_template("recipes.html", **salmon_fishcakes_content)
 
-# @app.route('/new-recipe')
-# def newRecipe():
-#     return render_template("new-recipe.html")
-
 
 @app.route('/recipe/<recipe_id>')
 def serveRecipe(recipe_id):
+    
     # Query the database to get the recipe details
     recipe = db.Recipe.query.filter_by(recipe_id=recipe_id).first()
 
@@ -65,8 +63,8 @@ def serveRecipe(recipe_id):
                            time=time,
                            ingredients=ingredients,
                            steps=steps,
-                           cuisine_name=cuisine_name,
-                           )
+                           cuisine_name=cuisine_name, 
+                            )
 
 
 @app.route('/search')
@@ -77,7 +75,6 @@ def search():
     results = perform_search(query)
 
     return render_template('search_results.html', query=query, results=results)
-
 
 def perform_search(query):
     # Example: Search for recipes or cuisines containing the query in name or description
@@ -90,7 +87,7 @@ def perform_search(query):
 
     return {'recipes': recipe_results, 'cuisines': cuisine_results}
 
-@app.route('/publish', methods=['GET', 'POST'])
+@app.route('/publish', methods=['GET','POST'])
 def publish():
     if request.method == 'GET':
         return render_template('new-recipe.html')
@@ -100,8 +97,8 @@ def publish():
         recipe_name = request.form['recipename']
         recipe_desc = request.form['recipedesc']
         serves = request.form['serves']
-        image = request.files['image'].read()
-        time = (request.form['hour']*60)+(request.form['minutes'])
+        image = request.form['image']
+        time = request.form['time']
         ingredients = eval(request.form['ingredients'])  # Assuming the ingredients are a list of pairs
         steps = eval(request.form['steps'])  # Assuming the steps are a list
         cuisine_name = request.form['cuisine']
@@ -145,6 +142,4 @@ def publish():
 
         db.session.commit()
 
-        return redirect(url_for('new_recipe'))
-
-    
+        return 'Recipe inserted successfully'

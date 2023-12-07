@@ -47,13 +47,26 @@ This project is licensed under MIT - see the [LICENSE](https://github.com/spe-uo
 
 ## Setup and Deployment
 
-**Prerequisites** Clone our github repository: https://github.com/spe-uob/2023-Chatbots.git
+### Prerequisites 
+Clone our GitHub repository: https://github.com/spe-uob/2023-Chatbots.git
 
 **Downloads**: 
 - Python https://www.python.org/downloads/release/python-3120/
-- Flask: via command lines in terminal, pip install flask
-- SQL: pip install mysql-connector-python
+- Flask: 
+  - via command lines in terminal, pip install flask
+- SQL Alchemy: 
+  - `pip install sqlalchemy`
+  - Arch: `Pacman -S python-sqlalchemy`
 - OpenAI
+- Recommended IDE:
+  - JetBrains PyCharm
+
+### Usage
+
+To run the flask server locally:
+- navigate to `code/website`
+- run: `flask run`
+
 
 ## Acknowledgements
 
@@ -95,6 +108,9 @@ As a website administrator, I want the chatbot to monitor user interactions and 
 
 As a sales representative, I want the chatbot to provide product recommendations based on user preferences so that I can increase sales and customer satisfaction. By leveraging user preferences and the chatbot's capabilities, I can offer tailored product suggestions that enhance the shopping experience, boost sales, and satisfy customers.
 
+As a regular user of the recipes website, I want to explore example recipes on the website, so I can find inspiration for my own cooking.
+
+As a visitor of the recipes website, I want to browse and explore different cuisines and recipes, so I can discover new dishes to try
 
 ## Flow Steps
 
