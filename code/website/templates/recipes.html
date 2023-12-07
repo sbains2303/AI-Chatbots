@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% set is_extended = True %}
+
+{% block content %}
+    <div class="page">
+        <div class="page-content-make rubik">
+            <h2><span class="title">{{ title }}</span></h2>
+
+
+            <p><span class="content description">{{ Description }}</span></p>
+
+            {% if Img %}
+                <img src="{{ url_for('static', filename='images/scrambled-eggs-image.jpg') }}" alt="Recipe Image" width="230" height="200">
+            {% endif %}
+
+            <p><span class="label">Cuisine:</span> <span class="content">{{ Cuisine }}</span></p>
+            <p><span class="label bold">Time:</span> <span class="content bold">{{ Time }}</span></p>
+            <p><span class="label bold">Serves:</span> <span class="content bold">{{ Serves }}</span></p>
+
+            <p>Ingredients</p>
+            <ul>
+                {% for ingredient in ingredient_list %}
+                    <li class="lists">{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+
+            <p>Method</p>
+            {% for step in method_list %}
+                <p class="step">Step {{ loop.index }}</p>
+                <p class="lists">{{ step }}</p>
+            {% endfor %}
+
+            <p><span class="label bold">Author:</span> <span class="content bold">{{ Author }}</span></p>
+
+            {% if success_message %}
+                <p class="success-message">{{ success_message }}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
