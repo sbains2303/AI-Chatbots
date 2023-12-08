@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import yaml
+from chatbot import Chatbot
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -33,6 +34,11 @@ with open("templates/salmon-fishcakes-content.yaml", "r") as file:
 @app.route('/salmon-fishcakes')
 def salmonFishcakes():
     return render_template("recipes.html", **salmon_fishcakes_content)
+
+@app.route('/chatbot')
+def chatbot():
+
+    return render_template("chatbot.html")
 
 
 @app.route('/recipe/<recipe_id>')

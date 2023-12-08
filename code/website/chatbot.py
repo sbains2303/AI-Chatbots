@@ -14,8 +14,16 @@ class Chatbot:
         print("New Chatbot")
         self.messages = [{"role": "system", "content": "You are a helpful assistant."}, ]
 
-    def inputPrompt(self):
-        pass
+    def input_prompt(self, message):
+
+        self.messages.append({"role": "user", "content": message})
+        completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=self.messages
+        )
+        r = completion.choices[0].message.content
+        self.messages.append({"role": "user", "content": r})
+        return r
 
     def flow(self):
         message = input()
