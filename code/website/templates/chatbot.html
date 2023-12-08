@@ -1,8 +1,16 @@
 {% extends 'layout.html' %}
 {% set is_extended = True %}
 
-{% block body %}
+{% block content %}
 
+    <form method="post" class="d-flex align-items-center">
+        <div class="col-auto-electrolize-font">
+            <label for="prompt-input" class="form-label">You:</label>
+            <!-- Add the 'name' attribute to the input field -->
+            <input type="text" class="form-control" id="prompt-input" name="prompt">
+        </div>
+    </form>
 
+    Response: {{ response }}
 
 {% endblock %}

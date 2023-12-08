@@ -5,45 +5,58 @@ from chatbot import Chatbot
 
 app = Flask(__name__, static_url_path='/static')
 
-
 app.config['DATABASE'] = 'cookbook.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cookbook.db'
 db = SQLAlchemy(app)
+
 
 @app.route('/')
 def home():
     return render_template("layout.html")
 
+
 with open("templates/scrambled-eggs-content.yaml", "r") as file:
     scrambled_eggs_content = yaml.safe_load(file)
+
 
 @app.route('/scrambled-eggs')
 def scrambledEggs():
     return render_template("recipes.html", **scrambled_eggs_content)
 
+
 with open("templates/chicken-korma.yaml", "r") as file:
     chicken_korma_content = yaml.safe_load(file)
+
 
 @app.route('/chicken-korma')
 def chickenKorma():
     return render_template("recipes.html", **chicken_korma_content)
 
+
 with open("templates/salmon-fishcakes-content.yaml", "r") as file:
     salmon_fishcakes_content = yaml.safe_load(file)
+
 
 @app.route('/salmon-fishcakes')
 def salmonFishcakes():
     return render_template("recipes.html", **salmon_fishcakes_content)
 
-@app.route('/chatbot')
-def chatbot():
 
-    return render_template("chatbot.html")
+@app.route('/chatbot', methods=['GET', 'POST'])
+def chatbot():
+    c = Chatbot()
+    if request.method == 'GET':
+        return render_template("chatbot.html")
+    else:
+        prompt = request.form['prompt']
+        res = c.input_prompt(prompt)
+        return render_template("chatbot.html", response=res)
+
+
 
 
 @app.route('/recipe/<recipe_id>')
 def serveRecipe(recipe_id):
-    
     # Query the database to get the recipe details
     recipe = db.Recipe.query.filter_by(recipe_id=recipe_id).first()
 
@@ -69,8 +82,8 @@ def serveRecipe(recipe_id):
                            time=time,
                            ingredients=ingredients,
                            steps=steps,
-                           cuisine_name=cuisine_name, 
-                            )
+                           cuisine_name=cuisine_name,
+                           )
 
 
 @app.route('/search')
@@ -81,6 +94,7 @@ def search():
     results = perform_search(query)
 
     return render_template('search_results.html', query=query, results=results)
+
 
 def perform_search(query):
     # Example: Search for recipes or cuisines containing the query in name or description
@@ -93,7 +107,8 @@ def perform_search(query):
 
     return {'recipes': recipe_results, 'cuisines': cuisine_results}
 
-@app.route('/publish', methods=['GET','POST'])
+
+@app.route('/publish', methods=['GET', 'POST'])
 def publish():
     if request.method == 'GET':
         return render_template('new-recipe.html')
