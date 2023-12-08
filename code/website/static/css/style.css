@@ -130,12 +130,18 @@ body {
   font-size: 1rem;
 }
 
+.chat-bot-text {
+    color: #D78617;
+    margin-right: 20px;
+}
+
 .bold {
     font-weight: bold;
 }
 
 .content {
     font-size: 1rem;
+    color: white;
 }
 
 .form-content {
@@ -366,4 +372,48 @@ textarea {
     width: 70%; /* Adjust as needed */
 }
 
+.input-chat:hover, textarea:hover {
+     border: 2px solid #D78617;
+}
+
+.input-chat, textarea {
+  font-family:inherit;
+  font-size: 1rem;
+}
+
+.input-chat {
+      margin-top: 2rem;
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border:none;
+      min-height: 1rem;
+      border-radius:10px;
+      -moz-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+}
+
+.chat-box {
+    margin-top: 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .input:hover, textarea:hover {
+     border: 2px solid #D78617;
+    }
+}
+
+.user-request {
+    font-size: 1rem;
+    color: white;
+}
+
+.chat-message {
+    margin-top: 1rem;
+}
 

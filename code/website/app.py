@@ -50,7 +50,7 @@ def chatbot():
     else:
         prompt = request.form['prompt']
         res = c.input_prompt(prompt)
-        return render_template("chatbot.html", response=res)
+        return res
 
 
 
