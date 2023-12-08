@@ -1,0 +1,22 @@
+title: "Scrambled Eggs"
+Cuisine: "British"
+Time: "20 minutes"
+Serves: "2"
+Img: "image"
+Description:
+  "Scrambled Eggs are a timeless breakfast favorite, loved for their simplicity and deliciousness. This classic dish transforms humble ingredients into a flavorful and satisfying meal. The recipe calls for fresh, large eggs seasoned with a pinch of salt and pepper, cooked to perfection in butter."
+ingredient_list:
+  - "4 large eggs"
+  - "Salt, to taste"
+  - "Pepper, to taste"
+  - "Butter, for cooking"
+  - "Optional: Chopped fresh herbs (e.g., chives or parsley) for garnish"
+method_list:
+  - "Crack the eggs into a bowl, season with salt and pepper, and beat them together with a fork or whisk until well combined."
+  - "Heat a non-stick frying pan over medium-low heat and add a knob of butter."
+  - "Once the butter has melted, pour in the beaten eggs."
+  - "Allow the eggs to sit for a moment, then gently stir with a spatula, lifting and folding the eggs from the edges to the center."
+  - "Continue to stir occasionally, allowing the eggs to form soft curds."
+  - "When the eggs are mostly set but still slightly creamy, remove the pan from the heat. The residual heat will continue to cook the eggs."
+  - "Serve the scrambled eggs on warm plates, garnished with chopped herbs if desired."
+Author: "ChatGPT"
