@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="light" xmlns="http://www.w3.org/1999/html">
 <head>
   {% block head %}
   <meta name="viewport" content="initial-scale=1, width=device-width" charset="utf-8" title="Home page">
 
   <title>{% block title %}Cooking Copilot{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +66,41 @@
   </div>
 
   {% if not is_extended %}
-    <div class="electrolize-font">
-      <h4 class="align">Welcome to Cooking Copilot!</h4>
-      <h2>Elevate Your Culinary Journey - Discover, Share, Chat!</h2>
-      <h4>Start the Chatbot to begin...</h4>
+     <div class="electrolize-font">
+       <h4>Welcome to Cooking Copilot!</h4>
+      <h2 class="electrolize-font-welcome">Elevate Your Culinary Journey - Discover, Share, Chat!</h2>
+      <h4>Click start to begin...</h4>
+       <a href="/chatbot"><button class="start-button">START</button></a>
+    </div>
+
+    <div class="browse-text electrolize-font">
+      <h4>Or discover new recipes below</h4>
+      <div id="recipeCarousel" class="carousel slide" style="margin: auto;margin-top: 2rem; margin-left: 5rem;" data-bs-ride="carousel">
+      <div class="carousel-inner" style="margin: auto">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='images/scrambled-eggs-image.jpg') }}" alt="Smoked Salmon Sushi Roll" width="400" height="200" class="d-block w-20 landing-image">
+          <div class="carousel-caption landing-caption">
+            <h3><a href="/scrambled-eggs">Scrambled Eggs</a></h3>
+            <p class="content">Scrambled Eggs are a timeless breakfast favorite, loved for their simplicity and deliciousness. This classic dish transforms humble ingredients into a flavorful and satisfying meal. The recipe calls for fresh, large eggs seasoned with a pinch of salt and pepper, cooked to perfection in butter.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/Fish-and-Chips.jpg') }}" alt="Fish and Chips" width="400" height="200" class="d-block w-30 landing-image">
+          <div class="carousel-caption landing-caption">
+            <h3>Fish and Chips</h3>
+          </div>
+        </div>
+        <!-- Add more carousel items as needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   {% endif %}
 

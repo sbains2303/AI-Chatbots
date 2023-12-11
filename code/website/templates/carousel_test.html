@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Carousel test</title>
-	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	{% block styles %}
+		<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	{% endblock %}
 </head>
 <body>
 
