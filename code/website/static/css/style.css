@@ -329,12 +329,14 @@ textarea {
   color: white;
   outline: none;
   line-height: 30px;
+  padding: 0.5rem;
   width: 260px;
   float: left;
   font-size: 1.1rem;
   transition: 0.7s ease;
   border-radius: 60px;
   border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .section-box {
@@ -389,6 +391,7 @@ textarea {
     color: #D78617;
 }
 
+
 .search-input:hover,
 .search-input:focus {
   width: 320px;
@@ -440,17 +443,7 @@ textarea {
       transition: all 0.25s ease-in-out;
 }
 
-.chat-box {
-    margin-top: 1rem;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
 
-    .input:hover, textarea:hover {
-     border: 2px solid #D78617;
-    }
-}
 
 .user-request {
     font-size: 1rem;

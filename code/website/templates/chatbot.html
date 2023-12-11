@@ -6,8 +6,19 @@
     <div class="chat-box" style="margin-top: 1rem; margin-left:15rem; border: 1px solid white; border-radius: 10px;
     padding: 20px; margin-bottom: 20px; width:50rem;">
         <form method="post" onsubmit="return submitForm()">
-            <div id="chat-history"></div>
-            <input type="text" class="input-chat" id="prompt-input" name="prompt" size="90" style="margin-top:2rem;" placeholder="Enter your query here to start!">
+            <div id="chat-history">
+                <div>
+                    <h4 style="color:white">Hello from the Cooking Copilot chatbot!</h4>
+                    <h4 style="color:white; font-size:1rem;">Here are some example queries and uses to get you started:</h4>
+                    <ul style="color:#D78617">
+                        <li>Upload your own digital recipe</li>
+                        <li>Ask to create a meal plan using your shopping list</li>
+                        <li>Ask to summarise a lengthy recipe</li>
+                        <li>Ask to give a recipe using the ingredients you have</li>
+                    </ul>
+                </div>
+            </div>
+            <input type="text" class="input-chat" id="prompt-input" name="prompt" size="90" style="margin-top:2rem;padding:0.5rem;border-radius:4rem;box-sizing: border-box;border: 2px solid #D78617;" placeholder="Enter your query here to start!">
         </form>
     </div>
 
