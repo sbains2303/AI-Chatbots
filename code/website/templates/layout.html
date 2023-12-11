@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="light" xmlns="http://www.w3.org/1999/html">
 <head>
   {% block head %}
   <meta name="viewport" content="initial-scale=1, width=device-width" charset="utf-8" title="Home page">
@@ -67,15 +67,15 @@
 
   {% if not is_extended %}
      <div class="electrolize-font">
-       <h4 class="electrolize-font-welcome">Welcome to Cooking Copilot!</h4>
-      <h2>Elevate Your Culinary Journey - Discover, Share, Chat!</h2>
-      <h4 class="electrolize-font-welcome">Start the Chatbot to begin...</h4>
+       <h4>Welcome to Cooking Copilot!</h4>
+      <h2 class="electrolize-font-welcome">Elevate Your Culinary Journey - Discover, Share, Chat!</h2>
+      <h4>Click start to begin...</h4>
+       <a href="/chatbot"><button class="start-button">START</button></a>
     </div>
-<!--    <h4 class="align electrolize-font-welcome">Welcome to Cooking Copilot!</h4>-->
 
     <div class="browse-text electrolize-font">
-
-      <div id="recipeCarousel" class="carousel slide" style="margin: auto;margin-top: 2rem;" data-bs-ride="carousel">
+      <h4>Or discover new recipes below</h4>
+      <div id="recipeCarousel" class="carousel slide" style="margin: auto;margin-top: 2rem; margin-left: 5rem;" data-bs-ride="carousel">
       <div class="carousel-inner" style="margin: auto">
         <div class="carousel-item active">
           <img src="{{ url_for('static', filename='images/scrambled-eggs-image.jpg') }}" alt="Smoked Salmon Sushi Roll" width="400" height="200" class="d-block w-20 landing-image">

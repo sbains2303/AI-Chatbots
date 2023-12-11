@@ -6,7 +6,8 @@
     margin-top: 3rem;
     color: white;
     font-weight: bold;
-    tex-align: center;
+    text-align: center;
+    margin-left: -6rem;
 }
 
 .electrolize-font-welcome {
@@ -34,7 +35,7 @@ body {
 }
 
 .bg-steel {
-    background-color: #061030;
+    background-color: #030B24;
     margin-top: 0;
 }
 
@@ -44,7 +45,7 @@ body {
 }
 
 .page {
-    background-color:  #061030;
+    background-color:  #030B24;
 }
 
 .dropdownMenu {
@@ -231,6 +232,20 @@ textarea {
     width: 4rem;
 }
 
+.start-button {
+    height: 2rem;
+    width: 6rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    background-color: #09216b;
+    color: white;
+}
+
+.start-button:hover {
+    border: 2px solid #D78617;
+}
+
+
 .delete {
     background-color: red;
     color: #fff;
@@ -297,6 +312,8 @@ textarea {
 }
 
 .landing-caption {
+    font-size: 1rem;
+    font-weight: normal;
     margin-top: 13rem;
     margin-left: 21rem;
 }
