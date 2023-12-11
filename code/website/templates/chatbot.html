@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% set is_extended = True %}
+
+{% block content %}
+
+    <div class="chat-box" style="margin-top: 1rem; margin-left:15rem; border: 1px solid white; border-radius: 10px;
+    padding: 20px; margin-bottom: 20px; width:50rem;">
+        <form method="post" onsubmit="return submitForm()">
+            <div id="chat-history"></div>
+            <input type="text" class="input-chat" id="prompt-input" name="prompt" size="90" style="margin-top:2rem;" placeholder="Enter your query here to start!">
+        </form>
+    </div>
+
+<script>
+
+    function submitForm() {
+    submitPrompt();
+    return false; // Prevent the form from actually submitting
+    }
+
+
+    async function submitPrompt() {
+        var promptInput = document.getElementById("prompt-input").value;
+        console.log("User prompt:", promptInput);
+        var chatHistory = document.getElementById("chat-history");
+        var responseContainer = document.getElementById("response");
+
+        // Display user's prompt in chat history
+        chatHistory.innerHTML += '<div class="content"><strong>You:</strong> ' + promptInput + '</div>';
+
+        document.getElementById("prompt-input").value = "";
+
+        var response = await fetch('/chatbot', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'prompt=' + encodeURIComponent(promptInput),
+        })
+        .then(response => response.text());
+        console.log("Bot response:", response);
+
+        // Simulate typing effect for the response
+        typeOutResponse(response);
+    }
+
+    function typeOutResponse(response) {
+        var chatHistory = document.getElementById("chat-history");
+        var responseContainer = document.getElementById("response");
+
+        chatHistory.innerHTML += '<div class="chat-bot-text"><strong>Bot:</strong> <span id="typing"></span></div>';
+
+        var typingSpan = document.getElementById("typing"); // Add this line to get the typing span element
+        var responseText = response.split("");
+        var i = 0;
+
+        function type() {
+            if (i < responseText.length) {
+                typingSpan.innerHTML += responseText[i];
+                i++;
+                setTimeout(type, 50); // Adjust the delay for typing speed
+            } else {
+                chatHistory.lastChild.remove();
+                chatHistory.innerHTML += '<div class="chat-bot-text"><strong>Bot:</strong> ' + response + '</div>';
+                responseContainer.innerHTML = '<div class="chat-bot-text"><strong>Bot:</strong> ' + response + '</div>';
+            }
+        }
+
+        type();
+    }
+</script>
+
+{% endblock %}

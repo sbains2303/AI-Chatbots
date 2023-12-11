@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with GPT</title>
+</head>
+<body>
+    <h1>ChatGPT chatpage</h1>
+    <input type="text" id="userInput" placeholder="insert your question">
+    <button onclick="sendMessage()">SEND</button>
+    <ul id="conversation"></ul>
+
+    <script>
+        async function sendMessage() {
+            const inputField = document.getElementById('userInput');
+            const userText = inputField.value;
+            inputField.value = '';
+            displayMessage(userText, 'You');
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userText })
+            });
+
+            const responseData = await response.json();
+            displayMessage(responseData.message, 'GPT');
+        }
+
+        function displayMessage(message, sender) {
+            const conversationElem = document.getElementById('conversation');
+            const messageElem = document.createElement('li');
+            messageElem.textContent = `${sender}: ${message}`;
+            conversationElem.appendChild(messageElem);
+        }
+    </script>
+</body>
+</html>
