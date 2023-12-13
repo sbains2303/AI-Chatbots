@@ -37,9 +37,7 @@ jobs:
     - name: Print Working Directory
       run: |
         echo "Working Directory: $PWD"
-    - name: Checkout Repository
-      uses: actions/checkout@v2
     - name: Test with pytest
       run: |
-        export FILE_PATH=$GITHUB_WORKSPACE/code/website
+        export FILE_PATH=$GITHUB_WORKSPACE/code/website/templates
         pytest $FILE_PATH
