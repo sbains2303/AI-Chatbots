@@ -40,4 +40,4 @@ jobs:
     - name: Test with pytest
       run: |
         export FILE_PATH=$GITHUB_WORKSPACE/code/website
-        pytest -m "not skip_yaml" $FILE_PATH
+        pytest $FILE_PATH
