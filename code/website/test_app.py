@@ -43,12 +43,18 @@ def test_home_page(client):
 #     })
 #     assert b'Recipe inserted successfully' in response.data
 
-def test_chatbot_interaction():
-    response = client.post('/chatbot', data={'prompt': 'Hello, chatbot!'})
-    assert response.status_code == 200
-    assert 'Chatbot response' in response.data.decode('utf-8')
+def test_scrambled_eggs_recipe(client):
+    response = client.get('/scrambled-eggs')
+    assert b'Scrambled Eggs' in response.data
+    assert b'British' in response.data
+    assert b'20 minutes' in response.data
+    assert b'2' in response.data
 
 def test_chatbot_interaction(client):
+    response = client.post('/chatbot', data={'prompt': 'Hello, chatbot!'})
+    assert response.status_code == 200
+
+def test_chatbot_joke(client):
     response = client.post('/chatbot', data={'prompt': 'Tell me a joke'})
     assert response.data.strip()
 
