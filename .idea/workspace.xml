@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a96b8405-41d7-4620-94c5-bac18d277945" name="Changes" comment="" />
+    <list default="true" id="a96b8405-41d7-4620-94c5-bac18d277945" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/website/test_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/website/test_app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +39,7 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "create-mvp-tests",
+    "git-widget-placeholder": "dev",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "C:/Users/saiha/2023-Chatbots",
     "node.js.detected.package.eslint": "true",

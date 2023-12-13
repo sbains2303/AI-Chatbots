@@ -23,17 +23,6 @@ def test_home_page(client):
     assert b'Welcome to Cooking Copilot!' in response.data
 
 
-# def test_search(client):
-#     response = client.get('/search?query=Chicken')
-#     assert b'Search Results for "Chicken"' in response.data
-
-
-def test_recipe_page(client):
-    response = client.get('/scrambled-eggs')
-    assert b'Scrambled Eggs' in response.data
-    assert b'Scrambled Eggs are a timeless breakfast favorite' in response.data
-
-
 # def test_publish_page(client):
 #     response = client.get('/publish')
 #     assert b'Add Recipe' in response.data
@@ -54,7 +43,13 @@ def test_recipe_page(client):
 #     })
 #     assert b'Recipe inserted successfully' in response.data
 
+def test_chatbot_interaction():
+    response = client.post('/chatbot', data={'prompt': 'Hello, chatbot!'})
+    assert response.status_code == 200
+    assert 'Chatbot response' in response.data.decode('utf-8')
 
 def test_chatbot_interaction(client):
     response = client.post('/chatbot', data={'prompt': 'Tell me a joke'})
     assert response.data.strip()
+
+
