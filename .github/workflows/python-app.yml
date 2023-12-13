@@ -39,5 +39,5 @@ jobs:
         echo "Working Directory: $PWD"
     - name: Test with pytest
       run: |
-        export FILE_PATH=$GITHUB_WORKSPACE/code/website/templates
-        pytest $FILE_PATH
+        export FILE_PATH=$GITHUB_WORKSPACE/code/website
+        pytest -m "not skip_yaml" $FILE_PATH
